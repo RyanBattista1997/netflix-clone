@@ -1,0 +1,150 @@
+.carousel-comp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.carou-desc {
+  color: white;
+  font-size: 1.65rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scroller {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.scroller .arrow-btn-left {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: calc(100% - .5rem);
+  top: 0.5rem;
+  opacity: .5;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: #4d4d4d;
+  border: none;
+  z-index: 2;
+  border-radius: 0 .5rem .5rem 0;
+}
+
+.scroller .arrow-btn-left:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.scroller .carousel-img-cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(10 * 206px + 8 * .5rem);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+.scroller .carousel-img-cont:hover {
+  -webkit-transform: translateX(-250px);
+          transform: translateX(-250px);
+  -webkit-transition: 20s linear;
+  transition: 20s linear;
+  cursor: pointer;
+}
+
+.scroller .arrow-btn-right {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: calc(100% - .5rem);
+  top: 0.5rem;
+  opacity: .5;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: #4d4d4d;
+  border: none;
+  z-index: 2;
+  border-radius: .5rem 0 0 .5rem;
+  left: calc(100% - 40px);
+}
+
+.scroller .arrow-btn-right:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.scroller .arrow-icon {
+  pointer-events: none;
+  fill: white;
+  height: 40px;
+  width: 40px;
+}
+/*# sourceMappingURL=Carousel.css.map */

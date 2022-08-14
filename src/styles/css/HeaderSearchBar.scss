@@ -1,0 +1,73 @@
+@import './abstracts/variables';
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    position: relative;
+    box-sizing: border-box;
+    transition: border .2s ease-in;
+
+    svg{
+        fill: white;
+        height: 38px;
+        width:  38px;
+        transform: scale( .7 , .7);
+        pointer-events: none;
+    }
+    
+    input {
+        background-color: black;
+        border: none;
+        color: white;
+        transition: width .2s ease-in-out;
+    }
+    
+    input:focus {
+        outline: none;
+        caret-color: hsl(255, 0%, 80%);
+    }
+
+    .results-dd {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        top: 38px;
+        background-color: black;
+        border-left: solid 1px white;
+        border-right: solid 1px white;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            list-style: none;
+            width: 100%;
+            padding: 0;
+
+            li{
+                width: calc(100% - 10px);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: white;
+                height: 38px;
+                border-bottom: solid 1px white;
+            }
+
+            :last-child {
+                border-bottom: none;
+            }
+        }
+    }      
+}

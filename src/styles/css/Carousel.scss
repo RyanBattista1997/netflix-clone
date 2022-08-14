@@ -1,0 +1,89 @@
+@import './abstracts/variables';
+@import './abstracts/colors';
+
+@mixin arrow-btn-styles {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: calc(100% - .5rem);
+    top: $carousel-padding;
+    opacity: .5;
+    width: $icon-width;
+    margin: 0;
+    padding: 0;
+    background-color: $arrow-btn-color;
+    border: none;
+    z-index: 2;
+}
+
+.carousel-comp{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.carou-desc{
+    color: white;
+    font-size: 1.65rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.scroller {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    .arrow-btn-left {
+        @include arrow-btn-styles();
+        border-radius: 0 .5rem .5rem 0 ;
+    }
+    
+    .arrow-btn-left:hover{
+        opacity: .7;
+        cursor: pointer;
+    }
+
+    .carousel-img-cont {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: calc(10 * 206px + 8 * .5rem);
+        gap: $carousel-padding;
+        margin-top: $carousel-padding;
+        transition: .3s linear ;
+    }
+    
+    .carousel-img-cont:hover {
+        transform: translateX(-250px);
+        transition: 20s linear;
+        cursor: pointer;
+    }
+
+    .arrow-btn-right {
+        @include arrow-btn-styles();
+        border-radius: .5rem 0 0 .5rem;
+        left: calc(100% - 40px);
+    }
+    
+    .arrow-btn-right:hover{
+        opacity: .7;
+        cursor: pointer;
+    }
+    .arrow-icon{
+        pointer-events: none;
+        fill: white;
+        height: $icon-height;
+        width: $icon-width;
+    }
+}

@@ -1,0 +1,6 @@
+img {
+    position: relative;
+    width: calc(375px * 0.6);
+    height: calc(210.75px * 0.6);
+    transition: all .25s ease-in;
+}
