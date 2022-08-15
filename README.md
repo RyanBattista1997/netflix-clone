@@ -4,6 +4,7 @@ TODO
 2) add mobile responsiveness
    - resize images
    - condtionally render header elements (done)
-   - add footer
+   - add sidebar for tablets
+   - add footer for mobile
       - make header links components (done)
 2) create video player component for trailers
