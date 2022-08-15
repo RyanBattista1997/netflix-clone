@@ -12,6 +12,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0 3vw;
   -webkit-box-shadow: 0 1px 2px #333333;
           box-shadow: 0 1px 2px #333333;
@@ -23,6 +26,8 @@
   width: 111px;
   height: 30px;
   fill: #db0000;
+  -webkit-transform: translateX(-1rem);
+          transform: translateX(-1rem);
 }
 
 .header-main ul {
@@ -37,6 +42,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 0;
 }
 
 .header-main ul li {
@@ -65,8 +71,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: auto;
   margin-right: 6vw;
+  margin-left: auto;
 }
 
 .header-main .user-container ul {
@@ -89,6 +95,7 @@
 
 .header-main .user-container .user-icon {
   position: relative;
+  height: 40px;
 }
 
 .header-main .user-container .user-icon img {

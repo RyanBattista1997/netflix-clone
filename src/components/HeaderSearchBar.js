@@ -39,7 +39,6 @@ export default function HeaderSearchBar() {
     function searchClickHandler(e) {
         if(e.target.className === 'search-bar') {
             if(inputRef.current.style.width === '30vw') {
-                console.log('yo')
                 dispatch(clearSearch())
                 dispatch(toggleResults())
             }

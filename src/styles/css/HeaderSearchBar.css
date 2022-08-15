@@ -20,6 +20,7 @@
           box-sizing: border-box;
   -webkit-transition: border .2s ease-in;
   transition: border .2s ease-in;
+  height: 40px;
 }
 
 .search-bar svg {

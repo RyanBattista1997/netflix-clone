@@ -6,14 +6,12 @@ import { useSelector } from 'react-redux';
 
 export default function App() {
 
-  //TODO: finish convert state with redux
-
   const {page} = useSelector(store => store.header);
   //user verification to be added in the future
   const [user, setUser] = useState({name: 'name' , profileImg: ''});
 
   return (
-    <div className="App">
+    <>
       <Header userName={user.name}/>
       <div className='main-car-cont'>
         <Carousel media={{type: page, genre: 'Popular' }}/>
@@ -23,6 +21,6 @@ export default function App() {
         <Carousel media={{type: page, genre: page === 'movies'? 'Romance' : 'Drama'}}/>
         <Carousel media={{type: page, genre: page === 'movies'? 'Horror' : 'Crime' }}/>
       </div>
-    </div>
+    </>
   );
 }

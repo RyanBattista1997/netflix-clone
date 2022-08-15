@@ -1,0 +1,15 @@
+li {
+  margin: 0 10px;
+  color: gray;
+  font-size: 1rem;
+}
+
+[data-active='true'] {
+  color: white;
+}
+
+li:hover {
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=LinkList.css.map */
