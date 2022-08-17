@@ -15,6 +15,9 @@
     z-index: 3;
 
     .netflix-logo {
+        @media only screen and(max-width: $mob-break) {
+            transform: translateX(-1rem);
+        }
         width: $netflix-logo-width;
         height: $netflix-logo-height;
         fill: #db0000;
