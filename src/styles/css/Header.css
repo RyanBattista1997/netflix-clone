@@ -1,6 +1,6 @@
 .header-main {
   background-color: #000000;
-  height: calc(max(10vh, 70px));
+  height: calc(max(10vh, 60px));
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,7 +15,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 3vw;
+  padding-left: 2rem;
   -webkit-box-shadow: 0 1px 2px #333333;
           box-shadow: 0 1px 2px #333333;
   position: fixed;
@@ -26,8 +26,6 @@
   width: 111px;
   height: 30px;
   fill: #db0000;
-  -webkit-transform: translateX(-1rem);
-          transform: translateX(-1rem);
 }
 
 .header-main ul {
@@ -42,7 +40,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .header-main ul li {

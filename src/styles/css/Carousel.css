@@ -27,6 +27,18 @@
           align-items: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .carou-desc {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .carou-desc {
+    font-size: 1.4rem;
+  }
+}
+
 .scroller {
   position: relative;
   overflow: hidden;
@@ -64,7 +76,7 @@
   height: calc(100% - .5rem);
   top: 0.5rem;
   opacity: .5;
-  width: 40px;
+  width: calc(max(20px, 3vw));
   margin: 0;
   padding: 0;
   background-color: #4d4d4d;
@@ -126,14 +138,14 @@
   height: calc(100% - .5rem);
   top: 0.5rem;
   opacity: .5;
-  width: 40px;
+  width: calc(max(20px, 3vw));
   margin: 0;
   padding: 0;
   background-color: #4d4d4d;
   border: none;
   z-index: 2;
   border-radius: .5rem 0 0 .5rem;
-  left: calc(100% - 40px);
+  left: calc(100% - calc(max(20px, 3vw)));
 }
 
 .scroller .arrow-btn-right:hover {

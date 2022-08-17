@@ -13,14 +13,21 @@ export default function Header(props) {
   const dispatch = useDispatch();
 
   //state handles width media query
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 990px)").matches
+  const [matchesTab, setMatchesTab] = useState(
+    window.matchMedia("(min-width: 1100px)").matches
+  )
+  const [matchesMob, setMatchesMob] = useState(
+    window.matchMedia("(min-width: 700px)").matches
   )
 
   useEffect(() => {
     window
-    .matchMedia("(min-width: 990px)")
-    .addEventListener('change', e => setMatches( e.matches ));
+    .matchMedia("(min-width: 1100px)")
+    .addEventListener('change', e => setMatchesTab( e.matches ));
+
+    window
+    .matchMedia("(min-width: 700px)")
+    .addEventListener('change', e => setMatchesMob( e.matches ));
   }, []);
 
   //handles all header click events besides search bar
@@ -46,7 +53,7 @@ export default function Header(props) {
                 </path>
             </g>
         </svg>
-        { matches && <ul className='link-list' onClick={headerClickHandler}>
+        { matchesTab && <ul className='link-list' onClick={headerClickHandler}>
             <li >Home</li>
             <LinkList text = 'Series'/>
             <LinkList text = 'Movies'/>
@@ -54,7 +61,7 @@ export default function Header(props) {
             <li>Recently Added</li>
             <li>My List</li>
         </ul>}
-          {matches &&<div className='user-container'>
+          {matchesMob &&<div className='user-container'>
             <ul className='right-list'>
               <li> 
                 <HeaderSearchBar />

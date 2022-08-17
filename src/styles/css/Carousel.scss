@@ -10,7 +10,7 @@
     height: calc(100% - .5rem);
     top: $carousel-padding;
     opacity: .5;
-    width: $icon-width;
+    width: $arw-btn-width;
     margin: 0;
     padding: 0;
     background-color: $arrow-btn-color;
@@ -26,6 +26,12 @@
 }
 
 .carou-desc{
+    @media only screen and (max-width: $mob-break) {
+        font-size: 1rem;
+    }
+    @media only screen and (max-width: $tab-break) {
+        font-size: 1.4rem;
+    }
     color: white;
     font-size: 1.65rem;
     display: flex;
@@ -73,7 +79,7 @@
     .arrow-btn-right {
         @include arrow-btn-styles();
         border-radius: .5rem 0 0 .5rem;
-        left: calc(100% - 40px);
+        left: calc(100% - #{$arw-btn-width});
     }
     
     .arrow-btn-right:hover{

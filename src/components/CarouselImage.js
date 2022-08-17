@@ -4,9 +4,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 export default function CarouselImage(props) {
 
-    const timeoutRef = useRef(null);
-    const IMAGE_HEIGHT = 210.75;
-    const IMAGE_WIDTH = 375;
     const BACKUP_INDEX = 14;
 
     const {page} = useSelector(store => store.header)
@@ -16,42 +13,33 @@ export default function CarouselImage(props) {
         poster(props.index)
     },[props])
 
-    function handleMouseEnter(e) {
-        timeoutRef.current = setTimeout(() => {
-            e.target.style.height = `calc(${IMAGE_HEIGHT}px * 0.85)`
-            e.target.style.width =`calc(${IMAGE_WIDTH}px * 0.85)`
-        },200)
-        
-    }
-    function handleMouseLeave(e) {
-        clearTimeout(timeoutRef.current)
-        e.target.style.height = `calc(${IMAGE_HEIGHT}px * 0.6)`
-        e.target.style.width =`calc(${IMAGE_WIDTH}px * 0.6)`
-    }
     
-    // 0 <= i < 20
+    // 0 <= i < 20 as 20 items per page
     const poster = async (i) => {
-        const media = page === 'movies'? 'movie' : 'tv'
-        let hasPoster = true;
-        const films = await getFilmByGenre(props.genreID, media);
-        const backDrop = await films[i].backdrop_path;
-        //checks if film has poster then provides back up if not
-        if(backDrop === null){
-            hasPoster = false;
+        try {
+            const media = page === 'movies'? 'movie' : 'tv';
+            let hasPoster = true;
+            const films = await getFilmByGenre(props.genreID, media);
+            const backDrop = await films[i].backdrop_path;
+            //checks if film has poster then provides back up if not
+            if(backDrop === null){
+                hasPoster = false;
+            }
+            const res = await fetch(`https://image.tmdb.org/t/p/w500/${films[hasPoster? i : BACKUP_INDEX].backdrop_path}`);
+            const imageBlob = await res.blob();
+            const imageObjectURL = URL.createObjectURL(imageBlob)
+            setImage(prevImage => { 
+                return {...prevImage, url: imageObjectURL, imgOf: films[hasPoster? i : BACKUP_INDEX].id }
+            })
         }
-        const res = await fetch(`https://image.tmdb.org/t/p/w500/${films[hasPoster? i : BACKUP_INDEX].backdrop_path}`);
-        const imageBlob = await res.blob();
-        const imageObjectURL = URL.createObjectURL(imageBlob)
-        setImage(prevImage => { 
-            return {...prevImage, url: imageObjectURL, imgOf: films[hasPoster? i : BACKUP_INDEX].id }
-        })
+        catch(error) {
+            console.log(`req failed with ${error} error`)
+        }
     }
 
     return (
         <>
             <img src={`${image.url}`} loading='lazy' alt='carouselImage' 
-            onMouseEnter={handleMouseEnter} 
-            onMouseLeave={handleMouseLeave}
             />
         </>
     )
