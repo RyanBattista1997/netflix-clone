@@ -33,13 +33,13 @@ export default function CarouselImage(props) {
             })
         }
         catch(error) {
-            console.log(`req failed with ${error} error`)
+            console.log(`req failed with error ${error}`)
         }
     }
 
     return (
         <>
-            <img src={`${image.url}`} loading='lazy' alt='carouselImage' 
+            <img src={`${image.url}`} className='media-img' loading='lazy' alt='carouselImage' 
             />
         </>
     )
@@ -55,6 +55,6 @@ async function getFilmByGenre(genre,type) {
         return data.results
     }
     catch(error) {
-        console.log('failed request')
+        console.log(`req failed with error ${error}`)
     }
 }

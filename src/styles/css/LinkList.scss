@@ -1,14 +1,14 @@
-li {
+.header-li {
     margin: 0 10px;
     color: hsl(0, 0%, 50%);
     font-size: 1rem;
 }
 
-[data-active='true'] {
+.header-li[data-active='true'] {
     color: hsl(0, 0%, 100%);
 }
         
-li:hover {
+.header-li:hover {
     color: hsl(0, 0%, 100%);
     cursor: pointer;
 }

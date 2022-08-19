@@ -1,14 +1,14 @@
-li {
+.header-li {
   margin: 0 10px;
   color: gray;
   font-size: 1rem;
 }
 
-[data-active='true'] {
+.header-li[data-active='true'] {
   color: white;
 }
 
-li:hover {
+.header-li:hover {
   color: white;
   cursor: pointer;
 }

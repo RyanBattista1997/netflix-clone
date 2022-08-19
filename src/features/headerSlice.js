@@ -6,6 +6,8 @@ const initialState = {
     searchBarValue: '',
     searchResults: [],
     resultsLoaded: false,
+    matchesTab: !window.matchMedia('max-height: 1100px').matches,
+    matchesMob: !window.matchMedia('max-height: 700px').matches
 }
 
 export const getSearchResults = createAsyncThunk(
@@ -41,6 +43,13 @@ const headerSlice = createSlice({
         },
         setPage: (state, {payload}) => {
             state.page = payload;
+        },
+        setMatchesMob: (state, {payload}) => {
+            state.matchesMob = payload;
+        },
+        setMatchesTab: (state, {payload}) => {
+            state.matchesTab = payload;
+            console.log(payload)
         }
         },
     extraReducers: {
@@ -65,4 +74,5 @@ const apiQuery = async (keyWord) => {
 
 export default headerSlice.reducer
 
-export const {clearSearch, toggleDD, setSearchValue, toggleResults, setPage} = headerSlice.actions;
+export const {clearSearch, toggleDD, setSearchValue, toggleResults,
+     setPage, setMatchesMob , setMatchesTab} = headerSlice.actions;

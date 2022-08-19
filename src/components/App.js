@@ -2,11 +2,12 @@ import '../styles/css/App.css';
 import React, { useState } from 'react';
 import Header from '../components/Header'
 import Carousel from '../components/Carousel';
+import Footer from './Footer';
 import { useSelector } from 'react-redux';
 
 export default function App() {
 
-  const {page} = useSelector(store => store.header);
+  const {page, matchesTab} = useSelector(store => store.header);
   //user verification to be added in the future
   const [user, setUser] = useState({name: 'name' , profileImg: ''});
 
@@ -21,6 +22,7 @@ export default function App() {
         <Carousel media={{type: page, genre: page === 'movies'? 'Romance' : 'Drama'}}/>
         <Carousel media={{type: page, genre: page === 'movies'? 'Horror' : 'Crime' }}/>
       </div>
+      {!matchesTab && <Footer />}
     </>
   );
 }

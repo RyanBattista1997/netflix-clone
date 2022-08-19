@@ -5,29 +5,21 @@ import UserDDMenu from './UserDDMenu'
 import Default_User_Img from '../images/Default_Avatar.png'
 import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleDD, setPage } from '../features/headerSlice'
+import { toggleDD, setPage, setMatchesMob, setMatchesTab } from '../features/headerSlice'
 
 export default function Header(props) {
 
-  const {headerDd, page} = useSelector(store => store.header)
+  const {headerDd, matchesMob, matchesTab} = useSelector(store => store.header)
   const dispatch = useDispatch();
-
-  //state handles width media query
-  const [matchesTab, setMatchesTab] = useState(
-    window.matchMedia("(min-width: 1100px)").matches
-  )
-  const [matchesMob, setMatchesMob] = useState(
-    window.matchMedia("(min-width: 700px)").matches
-  )
 
   useEffect(() => {
     window
     .matchMedia("(min-width: 1100px)")
-    .addEventListener('change', e => setMatchesTab( e.matches ));
+    .addEventListener('change', e => dispatch(setMatchesTab( e.matches )));
 
     window
     .matchMedia("(min-width: 700px)")
-    .addEventListener('change', e => setMatchesMob( e.matches ));
+    .addEventListener('change', e => dispatch(setMatchesMob( e.matches )));
   }, []);
 
   //handles all header click events besides search bar
@@ -64,7 +56,7 @@ export default function Header(props) {
           {matchesMob &&<div className='user-container'>
             <ul className='right-list'>
               <li> 
-                <HeaderSearchBar />
+                {matchesTab && <HeaderSearchBar />}
               </li>
               <li>KIDS</li>
               <li>DVD</li>

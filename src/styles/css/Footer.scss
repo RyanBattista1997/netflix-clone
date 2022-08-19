@@ -1,0 +1,27 @@
+@import '../css/abstracts/variables';
+
+footer{
+    position: fixed;
+    box-sizing: border-box;
+    top: calc(100% - #{$footer-height});
+    height: $footer-height ;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 -1px 2px hsl(255, 0% , 20%);
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-ul{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

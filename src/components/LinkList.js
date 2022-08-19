@@ -7,6 +7,6 @@ export default function LinkList(props) {
     const { page } = useSelector(store => store.header);
 
     return (
-        <li data-active={page === text.toLowerCase() ? true : false} className='link-li'>{text}</li>
+        <li data-active={page === text.toLowerCase() ? true : false} className='header-li'>{text}</li>
     )
 }

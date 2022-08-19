@@ -1,6 +1,6 @@
 @import './abstracts/variables';
 
-img {
+.media-img {
     @media only screen and (max-width: $tab-break) {
         width: calc(375px * 0.45);
         height: calc(210.75px * 0.45);
@@ -16,7 +16,7 @@ img {
     transition: all .25s ease-in;
 }
 
-img:hover{
+.media-img:hover{
     @media only screen and (max-width: $tab-break) {
         width: calc( 375px * 0.45 * #{$hover-scale} );
         height: calc( 210.75px * 0.45 * #{$hover-scale} );
