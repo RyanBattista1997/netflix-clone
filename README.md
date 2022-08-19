@@ -6,7 +6,7 @@ TODO
    - resize font(done)
    - fix hover scaling (done)
    - condtionally render header elements (done)
-   - fix logo centering on mob view
+   - fix logo centering on mob view (done)
    - add footer for mobile
       - make header links components (done)
 2) create video player component for trailers
