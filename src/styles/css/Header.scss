@@ -16,7 +16,7 @@
 
     .netflix-logo {
         @media only screen and(max-width: $mob-break) {
-            transform: translateX(-1rem);
+            transform: translateX(-2rem);
         }
         width: $netflix-logo-width;
         height: $netflix-logo-height;

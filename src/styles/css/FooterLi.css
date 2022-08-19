@@ -10,31 +10,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 25%;
   height: 100%;
   font-size: .75rem;
-}
-
-.footer-li:nth-child(1) {
-  padding-left: 5%;
-}
-
-.footer-li:nth-child(2) {
-  padding-left: 9%;
-}
-
-.footer-li:nth-child(3) {
-  padding-left: 13%;
-}
-
-.footer-li:nth-child(4) {
-  padding-left: 17%;
 }
 
 .footer-li .footer-li-content {
