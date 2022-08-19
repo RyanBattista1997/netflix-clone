@@ -6,7 +6,7 @@ const initialState = {
     searchBarValue: '',
     searchResults: [],
     resultsLoaded: false,
-    matchesTab: !window.matchMedia('max-height: 1100px').matches,
+    matchesTab: window.matchMedia('max-height: 1100px').matches,
     matchesMob: !window.matchMedia('max-height: 700px').matches
 }
 
