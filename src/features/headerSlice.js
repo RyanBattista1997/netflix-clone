@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+
 const initialState = {
     page: 'movies',
     headerDd: false ,
     searchBarValue: '',
     searchResults: [],
     resultsLoaded: false,
-    matchesTab: window.matchMedia('max-height: 1100px').matches,
-    matchesMob: !window.matchMedia('max-height: 700px').matches
+    matchesTab: false,
+    matchesMob: false
 }
 
 export const getSearchResults = createAsyncThunk(
@@ -49,7 +50,6 @@ const headerSlice = createSlice({
         },
         setMatchesTab: (state, {payload}) => {
             state.matchesTab = payload;
-            console.log(payload)
         }
         },
     extraReducers: {

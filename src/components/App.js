@@ -1,16 +1,30 @@
 import '../styles/css/App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header'
 import Carousel from '../components/Carousel';
 import Footer from './Footer';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {setMatchesMob, setMatchesTab } from '../features/headerSlice'
 
 export default function App() {
 
   const {page, matchesTab} = useSelector(store => store.header);
+  const dispatch = useDispatch();
   //user verification to be added in the future
   const [user, setUser] = useState({name: 'name' , profileImg: ''});
 
+
+  useEffect(() => {
+    dispatch(setMatchesMob(window.matchMedia("(max-width: 700px)").matches));
+    dispatch(setMatchesTab(window.matchMedia("(max-width: 1100px)").matches));
+    window
+    .addEventListener('resize', () => {
+      dispatch(setMatchesMob(window.matchMedia("(max-width: 700px)").matches));
+      dispatch(setMatchesTab(window.matchMedia("(max-width: 1100px)").matches));
+    })
+
+  }, []);
+  
   return (
     <>
       <Header userName={user.name}/>
@@ -22,7 +36,7 @@ export default function App() {
         <Carousel media={{type: page, genre: page === 'movies'? 'Romance' : 'Drama'}}/>
         <Carousel media={{type: page, genre: page === 'movies'? 'Horror' : 'Crime' }}/>
       </div>
-      {!matchesTab && <Footer />}
+      {matchesTab && <Footer />}
     </>
   );
 }

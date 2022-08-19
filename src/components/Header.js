@@ -3,30 +3,17 @@ import LinkList from './LinkList'
 import HeaderSearchBar from './HeaderSearchBar'
 import UserDDMenu from './UserDDMenu'
 import Default_User_Img from '../images/Default_Avatar.png'
-import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleDD, setPage, setMatchesMob, setMatchesTab } from '../features/headerSlice'
+import { toggleDD, setPage } from '../features/headerSlice'
 
 export default function Header(props) {
 
   const {headerDd, matchesMob, matchesTab} = useSelector(store => store.header)
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    window
-    .matchMedia("(min-width: 1100px)")
-    .addEventListener('change', e => dispatch(setMatchesTab( e.matches )));
-
-    window
-    .matchMedia("(min-width: 700px)")
-    .addEventListener('change', e => dispatch(setMatchesMob( e.matches )));
-  }, []);
-
   //handles all header click events besides search bar
   function headerClickHandler(e) {
-
     const { className, dataset, textContent} = e.target;
-
     if(className === 'link-li') {
       if(dataset.active === 'true') {
         return
@@ -45,7 +32,7 @@ export default function Header(props) {
                 </path>
             </g>
         </svg>
-        { matchesTab && <ul className='link-list' onClick={headerClickHandler}>
+        { !matchesTab && <ul className='link-list' onClick={headerClickHandler}>
             <li >Home</li>
             <LinkList text = 'Series'/>
             <LinkList text = 'Movies'/>
@@ -53,10 +40,10 @@ export default function Header(props) {
             <li>Recently Added</li>
             <li>My List</li>
         </ul>}
-          {matchesMob &&<div className='user-container'>
+          {!matchesMob &&<div className='user-container'>
             <ul className='right-list'>
               <li> 
-                {matchesTab && <HeaderSearchBar />}
+                {!matchesTab && <HeaderSearchBar />}
               </li>
               <li>KIDS</li>
               <li>DVD</li>
