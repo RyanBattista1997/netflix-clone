@@ -1,5 +1,8 @@
 import '../styles/css/MobileMenu.css'
 import searchIcon from '../images/search.svg';
+import notiIcon from '../images/noti.svg';
+import userImg from '../images/Default_Avatar.png';
+import swapAcc from '../images/swapAcc.svg';
 import { useSelector , useDispatch } from 'react-redux/es/exports';
 import { useEffect, useRef } from 'react';
 import { getSearchResults, setSearchValue } from '../features/headerSlice';
@@ -8,7 +11,7 @@ import { getSearchResults, setSearchValue } from '../features/headerSlice';
 export default function MobileMenu(props) {
 
     const {content} = props;
-    const {searchBarValue, searchResults, resultsLoaded} = useSelector(store => store.header);
+    const {searchBarValue, searchResults, resultsLoaded, user} = useSelector(store => store.header);
     const dispatch = useDispatch();
     const timeoutRef = useRef(null);
 
@@ -59,6 +62,29 @@ export default function MobileMenu(props) {
         )
     }
     if(content === 'menu') {
-        
+        return (
+            <content className='mob-menu-cont'>
+                <header>
+                    <img src={userImg} alt='user avatar' loading='lazy' className='user-img' />
+                    <span>{user.name}</span>
+                    <img  src={swapAcc} alt='swap account' loading='lazy' className='swap-acc-img' />
+                </header>
+                <div className='mob-menu-noti'>
+                    <title>
+                        <img src={notiIcon} alt='notification icon' loading='lazy'/>
+                        Notifications
+                    </title>
+                </div>
+                <ul className='mob-link-li'>
+                    <li>Home</li>
+                    <li>Recently Added</li>
+                    <li>Movies</li>
+                    <li>Series</li>
+                    <li>Originals</li>
+                    <li>Settings</li>
+                </ul>
+            </content>
+
+        )
     } 
 }

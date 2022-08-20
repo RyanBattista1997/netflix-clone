@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
 const initialState = {
+    user:{name: 'name'},
     page: 'movies',
     headerDd: false ,
     searchBarValue: '',

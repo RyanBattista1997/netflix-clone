@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     .mob-search-bar{
         display: flex;
@@ -60,4 +60,87 @@
             height: 8%;
         }
     }
+
+    header{
+        &, *{
+            box-sizing: border-box;
+        }
+
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: calc(max(5px, 3%)) 5%;
+        background-color: hsl(255, 0%, 10%);
+        box-shadow: 0 1px 2px black;
+        color: hsl(255, 0%, 70%);
+
+        .user-img{
+            width: calc(max(10vmin, 40px));
+            height: calc(max(10vmin, 40px));
+        }
+
+        span{
+            padding-left: 5%;
+            margin-right: auto;
+            font-size: calc(max(1rem, 125%))
+        }
+        .swap-acc-img{
+            transform: scale(.6, .6);
+        }
+    }
+    .mob-menu-noti{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 1px 2px black;
+
+        title{
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: hsl(255, 0%, 60%);
+            padding: calc(max(5px, 3%));
+    
+            img{
+                transform: scale(.7, .7);
+                padding-inline: 3%
+            }
+        }
+    }
+    .mob-link-li{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: hsl(255, 0%, 70%);
+        width: 100%;
+        gap: 1rem;
+        overflow: hidden;
+        
+        li{
+            width: 100%;
+            display: flex;
+            height: fit-content;
+            justify-content: flex-start;
+            padding-inline-start: calc(max(5px, 3%));
+            align-items: center;
+            font-size: calc(min(1rem, 15vmin));
+
+            &:hover{
+                color: hsl(255, 0%, 100%);
+
+            }
+        }
+    }
+    
+
 }

@@ -26,7 +26,18 @@ export default function Footer() {
             }
             dataset.active = 'true';
         }
-        
+
+        if(dataset.type === 'menu') {
+            dispatch(setMobMenuActive());
+            dispatch(setMobMenuContent('menu'));
+
+            if(dataset.active == 'true') {
+                dataset.active = 'false';
+                return
+            }
+            dataset.active = 'true';
+        }
+
 
     }
 
