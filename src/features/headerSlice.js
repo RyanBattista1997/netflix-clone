@@ -8,7 +8,9 @@ const initialState = {
     searchResults: [],
     resultsLoaded: false,
     matchesTab: false,
-    matchesMob: false
+    matchesMob: false,
+    mobMenuActive: false,
+    mobMenuContent: ''
 }
 
 export const getSearchResults = createAsyncThunk(
@@ -50,6 +52,12 @@ const headerSlice = createSlice({
         },
         setMatchesTab: (state, {payload}) => {
             state.matchesTab = payload;
+        },
+        setMobMenuActive: (state) => {
+            state.mobMenuActive = !state.mobMenuActive;
+        },
+        setMobMenuContent: (state, {payload}) => {
+            state.mobMenuContent = payload;
         }
         },
     extraReducers: {
@@ -74,5 +82,9 @@ const apiQuery = async (keyWord) => {
 
 export default headerSlice.reducer
 
-export const {clearSearch, toggleDD, setSearchValue, toggleResults,
-     setPage, setMatchesMob , setMatchesTab} = headerSlice.actions;
+export const {clearSearch, toggleDD,
+     setSearchValue, toggleResults,
+     setPage, setMatchesMob ,
+     setMatchesTab, setMobMenuActive,
+     setMobMenuContent,
+                        } = headerSlice.actions;

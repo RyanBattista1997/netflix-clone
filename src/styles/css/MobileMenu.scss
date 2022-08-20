@@ -1,0 +1,63 @@
+@import './abstracts/variables';
+
+
+.mob-menu-cont{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: calc(100vh - #{$footer-height});
+    background-color: hsl(255, 0%, 10%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .mob-search-bar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: calc(max(50px, 10%));
+        width: 100%;
+        background-color: hsl(255, 0%, 0%);
+
+        img{
+            transform: scale(.6,.6);
+            padding-inline: 3%;
+        }
+
+        input{
+            width: 76%;
+            background-color: hsl(255, 0%, 0%);
+            outline: 0;
+            border: none;
+            caret-color: white;
+            color: white;
+            padding: calc(min(3.5%, 14px)) 0;
+            border-bottom: solid 2px hsl(255, 0%, 20%);
+        }
+    }
+
+    .mob-search-results{
+        width: 100%;
+        height: 87%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: white;
+        list-style: none;
+        overflow: hidden;
+        padding-inline: 0;
+        font-size: calc(max(100%, .7rem));
+
+        li{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 8%;
+        }
+    }
+}

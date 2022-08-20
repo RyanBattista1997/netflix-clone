@@ -30,6 +30,7 @@
         }
 
         .menu-icon{
+            pointer-events: none;
             box-sizing: border-box;
             transform: scale(.8,.8);
         }
