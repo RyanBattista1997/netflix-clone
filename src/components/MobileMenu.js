@@ -57,5 +57,8 @@ export default function MobileMenu(props) {
                 </ul>
             </content>
         )
-    }  
+    }
+    if(content === 'menu') {
+        
+    } 
 }

@@ -1,5 +1,5 @@
 import '../styles/css/App.css';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Header from '../components/Header'
 import Carousel from '../components/Carousel';
 import Footer from './Footer';
@@ -8,11 +8,10 @@ import {setMatchesMob, setMatchesTab } from '../features/headerSlice'
 
 export default function App() {
 
-  const {page, matchesTab} = useSelector(store => store.header);
+  const {page, matchesTab, searchResults} = useSelector(store => store.header);
   const dispatch = useDispatch();
   //user verification to be added in the future
   const [user, setUser] = useState({name: 'name' , profileImg: ''});
-
 
   useEffect(() => {
     dispatch(setMatchesMob(window.matchMedia("(max-width: 700px)").matches));

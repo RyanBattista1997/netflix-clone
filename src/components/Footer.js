@@ -1,7 +1,7 @@
 import '../styles/css/Footer.css'
 import FooterLi from './FooterLi'
 import { useSelector, useDispatch } from 'react-redux';
-import { setMobMenuActive, setMobMenuContent } from '../features/headerSlice';
+import { setMobMenuActive, setMobMenuContent, clearSearch, toggleResults } from '../features/headerSlice';
 import MobileMenu from './MobileMenu';
 
 export default function Footer() {
@@ -11,11 +11,23 @@ export default function Footer() {
 
     function footerClickHandler(e) {
 
+        const {dataset} = e.target;
 
-        if(e.target.dataset.type === 'search') {
-            dispatch(setMobMenuActive())
-            dispatch(setMobMenuContent('search'))
+
+        if(dataset.type === 'search') {
+            dispatch(setMobMenuActive());
+            dispatch(setMobMenuContent('search'));
+
+            if(dataset.active == 'true') {
+                dispatch(clearSearch())
+                dispatch(toggleResults())
+                dataset.active = 'false';
+                return
+            }
+            dataset.active = 'true';
         }
+        
+
     }
 
     return (
