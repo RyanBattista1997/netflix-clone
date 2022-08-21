@@ -47,9 +47,9 @@ export default function Footer() {
     }
 
     return (
-        <footer onClick={footerClickHandler}>
+        <footer>
             {mobMenuActive && <MobileMenu content={mobMenuContent} />}
-            <ul className='footer-ul'>
+            <ul className='footer-ul' onClick={footerClickHandler}>
                 <FooterLi text='home' icon='home' />
                 <FooterLi text='search' icon='search' />
                 <FooterLi text='download' icon='file' />

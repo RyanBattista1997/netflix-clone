@@ -111,7 +111,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: calc(max(5px, 3%)) 5%;
+  padding: calc(max(5px, 5%));
   background-color: #1a1a1a;
   -webkit-box-shadow: 0 1px 2px black;
           box-shadow: 0 1px 2px black;

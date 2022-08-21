@@ -22,7 +22,7 @@ export default function FooterLi(props) {
                     data-active={icon === activeFooterLi? true: false}
                     data-type={text} 
             >
-                <img src={iconKeys[icon]} className='menu-icon'/>
+                <img src={iconKeys[icon]} className='menu-icon' alt='menu icon'/>
                 {text}
             </content>
         </li>
