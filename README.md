@@ -17,7 +17,9 @@ TODO
       - add mobile search bar(done)
       - add mob search logic (done)
       - add mobile menu (done)
+      - fix footer event handler (done)
+      - fix icon loading in mobile menu
       - make media queries close menu
       - add menu link logic
-      - fix footer vieport bug on for android google apps
+      - fix footer vieport bug on for android google apps(done)
 2) create video player component for trailers
