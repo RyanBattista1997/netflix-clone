@@ -2,7 +2,7 @@ footer {
   position: fixed;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  top: calc(100% - calc(max(7vh, 70px)));
+  bottom: 0;
   height: calc(max(7vh, 70px));
   width: 100%;
   background-color: black;

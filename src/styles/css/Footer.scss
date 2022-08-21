@@ -3,7 +3,7 @@
 footer{
     position: fixed;
     box-sizing: border-box;
-    top: calc(100% - #{$footer-height});
+    bottom: 0;
     height: $footer-height ;
     width: 100%;
     background-color: black;
