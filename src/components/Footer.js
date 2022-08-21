@@ -1,43 +1,48 @@
 import '../styles/css/Footer.css'
 import FooterLi from './FooterLi'
 import { useSelector, useDispatch } from 'react-redux';
-import { setMobMenuActive, setMobMenuContent, clearSearch, toggleResults } from '../features/headerSlice';
+import { setMobMenuActive, setMobMenuContent, clearSearch, toggleResults, setActiveFooterLi } from '../features/headerSlice';
 import MobileMenu from './MobileMenu';
 
 export default function Footer() {
 
-    const { mobMenuActive, mobMenuContent} = useSelector(store => store.header);
+    const { mobMenuActive, mobMenuContent, activeFooterLi} = useSelector(store => store.header);
     const dispatch = useDispatch();
 
     function footerClickHandler(e) {
 
         const {dataset} = e.target;
 
-
-        if(dataset.type === 'search') {
-            dispatch(setMobMenuActive());
-            dispatch(setMobMenuContent('search'));
-
-            if(dataset.active == 'true') {
+        if(dataset.type === 'download') {
+            return
+        }
+        if(dataset.type === 'home' && activeFooterLi === 'home') {
+            return
+        }
+        if(dataset.type === 'home' && activeFooterLi !== 'home') {
+            if(activeFooterLi === 'search') {
                 dispatch(clearSearch())
                 dispatch(toggleResults())
-                dataset.active = 'false';
-                return
             }
-            dataset.active = 'true';
-        }
-
-        if(dataset.type === 'menu') {
+            dispatch(setActiveFooterLi('home'))
             dispatch(setMobMenuActive());
-            dispatch(setMobMenuContent('menu'));
-
-            if(dataset.active == 'true') {
-                dataset.active = 'false';
-                return
-            }
-            dataset.active = 'true';
+            return
         }
 
+        if(dataset.active === 'true'){
+            if(dataset.type === 'search') {
+                dispatch(clearSearch())
+                dispatch(toggleResults())
+            }
+            dispatch(setActiveFooterLi('home'))
+            dispatch(setMobMenuActive());
+            return
+        }
+        if(activeFooterLi === 'home'){
+            dispatch(setMobMenuActive());
+        }
+        dispatch(setActiveFooterLi(dataset.type))
+        dispatch(setMobMenuContent(dataset.type));
 
     }
 

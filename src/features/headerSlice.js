@@ -10,8 +10,9 @@ const initialState = {
     resultsLoaded: false,
     matchesTab: false,
     matchesMob: false,
+    activeFooterLi: 'home',
     mobMenuActive: false,
-    mobMenuContent: ''
+    mobMenuContent: '',
 }
 
 export const getSearchResults = createAsyncThunk(
@@ -54,6 +55,9 @@ const headerSlice = createSlice({
         setMatchesTab: (state, {payload}) => {
             state.matchesTab = payload;
         },
+        setActiveFooterLi: (state ,{payload}) => {
+            state.activeFooterLi = payload;
+        },
         setMobMenuActive: (state) => {
             state.mobMenuActive = !state.mobMenuActive;
         },
@@ -87,5 +91,5 @@ export const {clearSearch, toggleDD,
      setSearchValue, toggleResults,
      setPage, setMatchesMob ,
      setMatchesTab, setMobMenuActive,
-     setMobMenuContent,
+     setMobMenuContent, setActiveFooterLi
                         } = headerSlice.actions;
