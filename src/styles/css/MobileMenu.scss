@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    height: calc(100vh - #{$footer-height});
+    height: calc(100% - #{$footer-height});
     background-color: hsl(255, 0%, 10%);
     z-index: 5;
     display: flex;
