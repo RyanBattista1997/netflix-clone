@@ -14,6 +14,10 @@ TODO
       - make header links components (done)
       - make footer components(done)
       - if possible dynamically import icons in footer component
-      - add footer logic
-   - maybe add touch events for carousels
+      - add mobile search bar(done)
+      - add mob search logic (done)
+      - add mobile menu (done)
+      - make media queries close menu
+      - add menu link logic
+      - fix footer vieport bug on for android google apps
 2) create video player component for trailers
