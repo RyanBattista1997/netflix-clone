@@ -8,6 +8,7 @@ $arw-btn-width: calc(max(20px, 2.75vw));
 $hover-scale: 1.3;
 $footer-min: 70px;
 $footer-height: calc(max(7vh, #{$footer-min}));
+$mob-menu-padding: calc(max(10px, 5vw));
 
 //breakpoints
 $mob-break: 700px;
