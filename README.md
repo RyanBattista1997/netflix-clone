@@ -4,6 +4,7 @@ INFO ABOUT SITE LIMIATIONS:
  - mobile view doesn't switch to portrait posters as the api data rarely has both images, and it would take alot of filtering slowing down the app and increaing api        requests 
  - home/viewlist functionality isn't added as this is user specific data and users aren't currently setup
  - originals temporarily just shows series results as not sure if you can query responses via company atm
+ - due to use of api for large number of images, inital load is slow
 
 TODO
 
