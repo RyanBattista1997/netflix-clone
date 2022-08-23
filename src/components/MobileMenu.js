@@ -1,17 +1,15 @@
 import '../styles/css/MobileMenu.css'
-import searchIcon from '../images/search.svg';
-import notiIcon from '../images/noti.svg';
 import userImg from '../images/Default_Avatar.png';
-import swapAcc from '../images/swapAcc.svg';
 import { useSelector , useDispatch } from 'react-redux/es/exports';
 import { useEffect, useRef } from 'react';
-import { getSearchResults, setSearchValue } from '../features/headerSlice';
+import { getSearchResults, setSearchValue, setPage } from '../features/headerSlice';
 
 
 export default function MobileMenu(props) {
 
-    const {content} = props;
-    const {searchBarValue, searchResults, resultsLoaded, user} = useSelector(store => store.header);
+    const {content, icons} = props;
+    const {searchIcon, notiIcon, swapAcc} = icons;
+    const {searchBarValue, searchResults, resultsLoaded, user, page} = useSelector(store => store.header);
     const dispatch = useDispatch();
     const timeoutRef = useRef(null);
 
@@ -20,8 +18,7 @@ export default function MobileMenu(props) {
         lazyUpdate()
     },[searchBarValue])
 
-
-    const lazyUpdate = debounce(() => dispatch(getSearchResults(searchBarValue)), 250)
+    const lazyUpdate = debounce(() => dispatch(getSearchResults(searchBarValue)), 250);
 
     function debounce(cb, delay = 250) {
         
@@ -34,6 +31,14 @@ export default function MobileMenu(props) {
             cb(...args)
         }, delay)
         }
+    }
+
+    function mobMenuClickHandler(e) {
+        const {textContent} = e.target;
+        if(textContent === 'Settings' || textContent === 'home' || textContent === null) {
+            return
+        }
+        dispatch(setPage(textContent.toLowerCase()))
     }
 
     const mobResultCompArr = searchResults.map(element => {
@@ -61,6 +66,7 @@ export default function MobileMenu(props) {
             </content>
         )
     }
+
     if(content === 'menu') {
         return (
             <content className='mob-menu-cont'>
@@ -75,12 +81,12 @@ export default function MobileMenu(props) {
                         Notifications
                     </title>
                 </div>
-                <ul className='mob-link-li'>
+                <ul className='mob-link-li' onClick={mobMenuClickHandler}>
                     <li>Home</li>
                     <li>Recently Added</li>
-                    <li>Movies</li>
-                    <li>Series</li>
-                    <li>Originals</li>
+                    <li data-active={page === 'movies'? true : false} >Movies</li>
+                    <li data-active={page === 'series'? true : false} >Series</li>
+                    <li data-active={page === 'originals'? true : false}>Originals</li>
                     <li>Settings</li>
                 </ul>
             </content>

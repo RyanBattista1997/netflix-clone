@@ -1,13 +1,20 @@
 import '../styles/css/Carousel.css'
 import CarouselImage from './CarouselImage'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export default function Carousel(props) {
 
     const FILMS_PER_CAROUSEL = 13;
     const MAX_SCROLLS = 5;
-    const {page} = useSelector(store => store.header)
+    const {page, matchesTab} = useSelector(store => store.header)
+
+    const memoMaxImgs = useMemo(() => getMaxImg()
+    ,[matchesTab])
+
+    function getMaxImg() {
+        return matchesTab? 6 : 7;
+    }
 
     const [position, setPosition] = useState({current: 0, max: FILMS_PER_CAROUSEL })
     const [genreState, setGenreState] = useState({gen: '' , loaded: false})
@@ -19,14 +26,20 @@ export default function Carousel(props) {
 
     //handles image array order
     const getImageArr = (position) => {
-
+        
         const imageCompArr = [];
         for(let i = position; i <= FILMS_PER_CAROUSEL; i++) {
-            imageCompArr.push(<CarouselImage index = {`${i}`} genreID={genreState.gen} />)
+            if(imageCompArr.length > memoMaxImgs - 1) {
+                break
+            }
+            imageCompArr.push(<CarouselImage index = {`${i}`} genreID={genreState.gen} />)        
         }
         //add images to the end for loop effect
         if(position >= MAX_SCROLLS) {
             for(let i = 0 ; i <= position; i++) {
+                if(imageCompArr.length > 6) {
+                    break
+                }
                 imageCompArr.push(<CarouselImage index = {`${i}`} genreID={genreState.gen}/>)
             } 
         }

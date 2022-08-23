@@ -99,6 +99,7 @@
         align-items: center;
         justify-content: flex-start;
         box-shadow: 0 1px 2px black;
+        transition: none;
 
         title{
             height: fit-content;
@@ -110,6 +111,7 @@
             padding-top: calc(max(5px, 5vw));
             padding-bottom: calc(max(5px, 5vw));
             padding-inline-start: $mob-menu-padding;
+            transition: none;
             
     
             img{
@@ -129,8 +131,13 @@
         color: hsl(255, 0%, 70%);
         width: calc(100% - #{$mob-menu-padding});
         gap: 1rem;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
         padding-inline-start: $mob-menu-padding ;
+
+        [data-active='true']{
+            color: hsl(255, 0%, 100%);
+        }
         
         li{
             width: 100%;
@@ -142,6 +149,7 @@
 
             &:hover{
                 color: hsl(255, 0%, 100%);
+                cursor: pointer;
             }
         }
     }
