@@ -11,7 +11,7 @@ TODO
 Since carousel doesnt actually scroll, can render only max images on the screen at a given time instead
 2) render less images (loading time halfed lmao)
    - use media to set max images on screen (done)
-4) add mobile responsiveness (90% done)
+3) add mobile responsiveness (90% done)
    - resize images (done)
    - resize font(done)
    - fix hover scaling (done)
@@ -29,6 +29,6 @@ Since carousel doesnt actually scroll, can render only max images on the screen 
       - add menu link logic (done)
       - make media queries close menu (didn't do this but fixed anyway)
       - fix icon loading in mobile menu (for some reason only notification icon loads slow)
+      - add touch scroll event for menu links (done)
       - add notification component
-      - add touch scroll event for menu links
-5) create video player component for trailers
+4) create video player component for trailers
