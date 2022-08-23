@@ -8,8 +8,11 @@ INFO ABOUT SITE LIMIATIONS:
 
 TODO
 
-1) add CI/CD
-2) add mobile responsiveness
+1) fix CI/C
+Since carousel doesnt actually scroll, can render only max images on the screen at a given time instead
+2) render less images (loading time halfed lmao)
+   - use media to set max images on screen (done)
+4) add mobile responsiveness (90% done)
    - resize images (done)
    - resize font(done)
    - fix hover scaling (done)
@@ -19,7 +22,6 @@ TODO
    - add footer for mobile
       - make header links components (done)
       - make footer components(done)
-      - if possible dynamically import icons in footer component
       - add mobile search bar(done)
       - add mob search logic (done)
       - add mobile menu (done)
@@ -27,7 +29,7 @@ TODO
       - fix footer vieport bug on for android google apps(done)
       - add menu link logic (done)
       - make media queries close menu (didn't do this but fixed anyway)
-      - fix icon loading in mobile menu
+      - fix icon loading in mobile menu (for some reason only notification icon loads slow)
       - add notification component
       - add touch scroll event for menu links
-2) create video player component for trailers
+5) create video player component for trailers
