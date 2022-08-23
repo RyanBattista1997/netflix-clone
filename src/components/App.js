@@ -3,12 +3,12 @@ import  { useEffect, useState } from 'react';
 import Header from '../components/Header'
 import Carousel from '../components/Carousel';
 import Footer from './Footer';
-import { useSelector, useDispatch } from 'react-redux';
-import {setMatchesMob, setMatchesTab } from '../features/headerSlice'
+import { useSelector, useDispatch, } from 'react-redux';
+import {setMatchesMob, setMatchesTab, clearSearch, toggleResults } from '../features/headerSlice'
 
 export default function App() {
 
-  const {page, matchesTab, searchResults} = useSelector(store => store.header);
+  const {page, matchesTab} = useSelector(store => store.header);
   const dispatch = useDispatch();
   //user verification to be added in the future
   const [user, setUser] = useState({name: 'name' , profileImg: ''});
@@ -23,7 +23,12 @@ export default function App() {
     })
 
   }, []);
-  
+
+  useEffect(() => {
+    dispatch(toggleResults())
+    dispatch(clearSearch())
+  },[matchesTab])
+
   return (
     <>
       <Header userName={user.name}/>

@@ -4,7 +4,8 @@ import swapAcc from '../images/swapAcc.svg';
 import searchIcon from '../images/search.svg';
 import notiIcon from '../images/noti.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import { setMobMenuActive, setMobMenuContent, clearSearch, toggleResults, setActiveFooterLi } from '../features/headerSlice';
+import { setMobMenuActive, setMobMenuContent, clearSearch,
+         toggleResults, setActiveFooterLi } from '../features/headerSlice';
 import MobileMenu from './MobileMenu';
 
 export default function Footer() {

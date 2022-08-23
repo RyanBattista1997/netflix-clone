@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from "react"
+import React, {useState , useEffect} from "react"
 import '../styles/css/CarouselImage.css'
 import { useSelector } from "react-redux/es/hooks/useSelector"; 
 
