@@ -76,7 +76,8 @@
           justify-content: flex-start;
   color: white;
   list-style: none;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding-inline: 0;
   font-size: calc(max(100%, .7rem));
 }
@@ -92,7 +93,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 8%;
+  height: calc(max(30px,8vh));
+  gap: 10px;
 }
 
 .mob-menu-cont header {
@@ -215,9 +217,10 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   color: #b3b3b3;
-  width: calc(100% - calc(max(10px, 5vw)));
+  width: calc(100%);
   gap: 1rem;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
   -webkit-padding-start: calc(max(10px, 5vw));
           padding-inline-start: calc(max(10px, 5vw));
 }
