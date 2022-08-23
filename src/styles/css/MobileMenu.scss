@@ -41,7 +41,7 @@
 
     .mob-search-results{
         width: 100%;
-        height: 87%;
+        height: calc(min(87%, fit-content));
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -123,6 +123,7 @@
         }
     }
     .mob-link-li{
+        box-sizing: border-box;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -131,8 +132,7 @@
         color: hsl(255, 0%, 70%);
         width: calc(100% - #{$mob-menu-padding});
         gap: 1rem;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        overflow: hidden;
         padding-inline-start: $mob-menu-padding ;
 
         [data-active='true']{
