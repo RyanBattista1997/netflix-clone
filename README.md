@@ -7,7 +7,7 @@ INFO ABOUT SITE LIMIATIONS:
 
 TODO
 
-1) fix CI/C
+1) fix CI/CD
 Since carousel doesnt actually scroll, can render only max images on the screen at a given time instead
 2) render less images (loading time halfed lmao)
    - use media to set max images on screen (done)
@@ -31,4 +31,5 @@ Since carousel doesnt actually scroll, can render only max images on the screen 
       - fix icon loading in mobile menu (for some reason only notification icon loads slow)
       - add touch scroll event for menu links (done)
       - add notification component
+4) setup api for backend(will be in seperate repo to host on vercel)
 4) create video player component for trailers
