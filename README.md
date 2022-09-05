@@ -1,8 +1,12 @@
 site at https://ryanbattista1997.github.io/netflix-clone/
 
-INFO ABOUT SITE LIMIATIONS:
+INFO:
+ - DB mongoDB, hosting cluster on atlas (setup, need to run some scheme initialisions to ammend current sample data)
+ - API express/node, hosting on vercel (in progress, will host backend in seperate repo when futher along)
+
+
+SITE LIMIATIONS:
  - mobile view doesn't switch to portrait posters as the api data rarely has both images, and it would take alot of filtering slowing down the app and increaing api        requests 
- - home/viewlist functionality isn't added as this is user specific data and users aren't currently setup
  - originals temporarily just shows series results as not sure if you can query responses via company atm
 
 TODO
@@ -31,5 +35,4 @@ Since carousel doesnt actually scroll, can render only max images on the screen 
       - fix icon loading in mobile menu (for some reason only notification icon loads slow)
       - add touch scroll event for menu links (done)
       - add notification component
-4) setup api for backend(will be in seperate repo to host on vercel)
 4) create video player component for trailers
